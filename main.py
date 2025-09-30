@@ -2,14 +2,19 @@ import turtle
 x = 1
 # to make able to reflect
 turtle.tracer(0, 0)
-
+n = 1
 y = 2
+j = 1
 # If y = 1 it draws one side of the court.
 # If y = 2 it drwas the full court.
 def draw_half_circle():
-    for loop in range (180):
-        turtle.left(1* x)
-        turtle.backward(1 * x)
+    for loop in range (360):
+        turtle.left(0.5* x)
+        turtle.backward(0.5 * x * j)
+def draw_full_circle():
+    for loop in range (360):
+        turtle.right(1* x)
+        turtle.forward(1 * n * x)
 for loop in range (y):
     turtle.right(90 * x)
     turtle.penup()
@@ -28,9 +33,11 @@ for loop in range (y):
     turtle.right(90*x)
     turtle.forward(200*x)
     turtle.backward(200*x)
-    for loop in range (360):
-        turtle.forward(0.87*x)
-        turtle.right(1*x)
+    n = 0.87
+    draw_full_circle()
+    # for loop in range (360):
+    #     turtle.forward(0.87*x)
+    #     turtle.right(1*x)
     turtle.forward(200*x)
     turtle.right(90*x)
     turtle.forward(350*x)
@@ -38,10 +45,12 @@ for loop in range (y):
     turtle.forward(100*x)
     turtle.left(90*x)
     turtle.backward(100*x)
-    for loop in range (180):
-        turtle.backward(3.5*x)
-        turtle.left(1*x)
-    turtle.backward(103*x)
+    j = 3.5
+    draw_half_circle()
+    # for loop in range (180):
+    #     turtle.backward(3.5*x)
+    #     turtle.left(1*x)
+    turtle.backward(98*x)
     turtle.left(90*x)
     turtle.forward(100*x)
     turtle.right(90*x)
@@ -56,6 +65,8 @@ for loop in range (y):
     turtle.setpos(0,0)
     x = -1
     turtle.left(90)
+    j = 1
+    n = 1
 
 
 
